@@ -1,0 +1,56 @@
+[2022-08-02 11:41:40.434868] Connecting to SQL Server ... done
+[2022-08-02 11:41:40.435866] Creating table 'dbo.DragonPayPaidOrders' if not exists ... done
+[2022-08-02 11:41:40.438856] Table 'dbo.DragonPayPaidOrders' already exists ...
+[2022-08-02 11:41:40.483736] Inserting 0 rows from 'txnlist080122 (1).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:40.525624] Inserting 0 rows from 'txnlist080122 (10).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:40.568509] Inserting 0 rows from 'txnlist080122 (11).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:40.609399] Inserting 0 rows from 'txnlist080122 (12).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:40.650669] Inserting 0 rows from 'txnlist080122 (13).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:40.689162] Inserting 0 rows from 'txnlist080122 (14).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:40.727062] Inserting 0 rows from 'txnlist080122 (15).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:40.765957] Inserting 0 rows from 'txnlist080122 (16).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:40.803857] Inserting 0 rows from 'txnlist080122 (2).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:40.842752] Inserting 0 rows from 'txnlist080122 (3).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:40.892618] Inserting 0 rows from 'txnlist080122 (4).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:40.946473] Inserting 0 rows from 'txnlist080122 (5).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:40.988360] Inserting 0 rows from 'txnlist080122 (6).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:41.052193] Inserting 0 rows from 'txnlist080122 (7).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:41.103056] Inserting 0 rows from 'txnlist080122 (8).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:41.158903] Inserting 0 rows from 'txnlist080122 (9).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:41.208770] Inserting 0 rows from 'txnlist080122.csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:41.256641] Inserting 0 rows from 'txnlist080222 (1).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:41.304513] Inserting 0 rows from 'txnlist080222 (2).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:41.348395] Inserting 0 rows from 'txnlist080222 (3).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:41.391280] Inserting 0 rows from 'txnlist080222 (4).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:41.433400] Inserting 0 rows from 'txnlist080222 (5).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:41.473367] Inserting 0 rows from 'txnlist080222 (6).csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:41.514260] Inserting 0 rows from 'txnlist080222.csv' to table 'dbo.DragonPayPaidOrders' ... done
+[2022-08-02 11:41:41.514260] Time elapsed: 20.738 seconds...
+[2022-08-02 11:41:42.530003] Connecting to MySQL ... done
+[2022-08-02 11:41:42.531000] Creating table 'dragon_pay_data' if not exists ... done
+[2022-08-02 11:41:42.531997] Table 'dragon_pay_data' already exists ...
+[2022-08-02 11:41:43.345813] Inserting 0 rows from 'txnlist080122 (1).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:44.174617] Inserting 0 rows from 'txnlist080122 (10).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:44.983447] Inserting 0 rows from 'txnlist080122 (11).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:45.783272] Inserting 0 rows from 'txnlist080122 (12).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:46.617640] Inserting 0 rows from 'txnlist080122 (13).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:47.438579] Inserting 0 rows from 'txnlist080122 (14).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:48.232480] Inserting 0 rows from 'txnlist080122 (15).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:49.011552] Inserting 0 rows from 'txnlist080122 (16).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:49.841624] Inserting 0 rows from 'txnlist080122 (2).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:50.663946] Inserting 0 rows from 'txnlist080122 (3).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:51.520647] Inserting 0 rows from 'txnlist080122 (4).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:52.329476] Inserting 0 rows from 'txnlist080122 (5).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:53.136756] Inserting 0 rows from 'txnlist080122 (6).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:53.929628] Inserting 0 rows from 'txnlist080122 (7).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:54.755383] Inserting 0 rows from 'txnlist080122 (8).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:55.551276] Inserting 0 rows from 'txnlist080122 (9).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:56.349106] Inserting 0 rows from 'txnlist080122.csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:57.145001] Inserting 0 rows from 'txnlist080222 (1).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:57.936941] Inserting 0 rows from 'txnlist080222 (2).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:58.729813] Inserting 0 rows from 'txnlist080222 (3).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:41:59.520661] Inserting 0 rows from 'txnlist080222 (4).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:42:00.341591] Inserting 0 rows from 'txnlist080222 (5).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:42:01.150448] Inserting 0 rows from 'txnlist080222 (6).csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:42:01.970219] Inserting 0 rows from 'txnlist080222.csv' to table 'dragon_pay_data' ... done
+[2022-08-02 11:42:01.971217] Time elapsed 19.442 seconds...
