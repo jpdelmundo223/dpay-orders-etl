@@ -5,6 +5,7 @@ import pyodbc
 import configparser
 import time
 from datetime import datetime
+from utils.print_with_log import print_with_log
 
 t = time.time()
 
@@ -47,17 +48,17 @@ def start_etl() -> None:
                                 SettleDate DATETIME
                             )"""
     os.system('cls')
-    print(f"[{datetime.now()}] Connecting to SQL Server " + '.' * 3 + ' done')
+    print_with_log(f"[{datetime.now()}] Connecting to SQL Server " + '.' * 3 + ' done')
 
-    print(f"[{datetime.now()}] Creating table 'dbo.DragonPayPaidOrders' if not exists " + '.' * 3 + ' done')
+    print_with_log(f"[{datetime.now()}] Creating table 'dbo.DragonPayPaidOrders' if not exists " + '.' * 3 + ' done')
 
 
     try:
         mssql_cursor.execute(create_table)
         mssql_cursor.commit()
-        print(f"[{datetime.now()}] Table 'dbo.DragonPayPaidOrders' successfully created " + '.' * 3)
+        print_with_log(f"[{datetime.now()}] Table 'dbo.DragonPayPaidOrders' successfully created " + '.' * 3)
     except:
-        print(f"[{datetime.now()}] Table 'dbo.DragonPayPaidOrders' already exists " + '.' * 3)
+        print_with_log(f"[{datetime.now()}] Table 'dbo.DragonPayPaidOrders' already exists " + '.' * 3)
         
 
     mssql_table = etl.fromdb(mssql_conn, query="select * from dbo.DragonPayPaidOrders")
@@ -83,15 +84,15 @@ def start_etl() -> None:
             try:
                 row = row_count(table)
                 etl.appenddb(table, mssql_conn, 'DragonPayPaidOrders')
-                print("[{dt}] Inserting {row_count} rows from '{filename}' to table '{table_name}' {periods} done".format(dt=datetime.now(), row_count=row, filename=_, periods='.' * 3, table_name='dbo.DragonPayPaidOrders'))
+                print_with_log("[{dt}] Inserting {row_count} rows from '{filename}' to table '{table_name}' {periods} done".format(dt=datetime.now(), row_count=row, filename=_, periods='.' * 3, table_name='dbo.DragonPayPaidOrders'))
                 # time.sleep(0.5)
             except Exception as e:
-                print(e)
+                print_with_log(e)
 
         elapsed = time.time() - t
-        print(f"[{datetime.now()}] Time elapsed: {round(elapsed, 3)} seconds...")
+        print_with_log(f"[{datetime.now()}] Time elapsed: {round(elapsed, 3)} seconds...")
     else:
-        print("No files to read...")
+        print_with_log("No files to read...")
 
     print()
 
@@ -118,15 +119,15 @@ def start_etl() -> None:
     mysql_cursor = mysql_conn.cursor()
 
     try:
-        print(f"[{datetime.now()}] Connecting to MySQL " + '.' * 3 + ' done')
+        print_with_log(f"[{datetime.now()}] Connecting to MySQL " + '.' * 3 + ' done')
         
-        print(f"[{datetime.now()}] Creating table 'dragon_pay_data' if not exists " + '.' * 3 + ' done')
+        print_with_log(f"[{datetime.now()}] Creating table 'dragon_pay_data' if not exists " + '.' * 3 + ' done')
         mysql_cursor.execute(create_table)
         
-        print(f"[{datetime.now()}] Table 'dragon_pay_data' created successfully " + '.' * 3)
+        print_with_log(f"[{datetime.now()}] Table 'dragon_pay_data' created successfully " + '.' * 3)
         
     except:
-        print(f"[{datetime.now()}] Table 'dragon_pay_data' already exists " + '.' * 3)
+        print_with_log(f"[{datetime.now()}] Table 'dragon_pay_data' already exists " + '.' * 3)
         
 
     mysql_table = etl.fromdb(mysql_conn, query="select * from dragon_pay_data;")
@@ -164,22 +165,22 @@ def start_etl() -> None:
 
             table = etl.convert(table, ("RefDate", "SettleDate"), lambda d: datetime.strptime(d, format))
 
-            # # print(etl.look(table))
+            # # print_with_log(etl.look(table))
             try:
                 row = row_count(table)
                 if row > 0:
                     etl.appenddb(table, mysql_conn, 'dragon_pay_data')
-                    print("[{dt}] Inserting {row_count} rows from '{filename}' to table '{table_name}' {periods} done".format(dt=datetime.now(), row_count=row, filename=_, periods='.' * 3, table_name='dragon_pay_data'))
+                    print_with_log("[{dt}] Inserting {row_count} rows from '{filename}' to table '{table_name}' {periods} done".format(dt=datetime.now(), row_count=row, filename=_, periods='.' * 3, table_name='dragon_pay_data'))
                     # time.sleep(0.5)
                 else:
-                    print("[{dt}] Inserting {row_count} rows from '{filename}' to table '{table_name}' {periods} done".format(dt=datetime.now(), row_count=row, filename=_, periods='.' * 3, table_name='dragon_pay_data'))
+                    print_with_log("[{dt}] Inserting {row_count} rows from '{filename}' to table '{table_name}' {periods} done".format(dt=datetime.now(), row_count=row, filename=_, periods='.' * 3, table_name='dragon_pay_data'))
             except Exception as e:
-                print(e)
+                print_with_log(e)
 
         elapsed = time.time() - t2
-        print(f"[{datetime.now()}] Time elapsed {round(elapsed, 3)} seconds...")
+        print_with_log(f"[{datetime.now()}] Time elapsed {round(elapsed, 3)} seconds...")
     else:
-        print("No files to read...")
+        print_with_log("No files to read...")
 
 # query = "select * from dragon_pay_data"
 
@@ -188,14 +189,14 @@ def start_etl() -> None:
 # table2 = etl.fromcsv(''.join([csv_path, '\\txnlist021722.csv']))
 # table2 = etl.convert(table2, "TxnId", int)
 
-# print(etl.look(table))
-# print(etl.lookall(table2))
+# print_with_log(etl.look(table))
+# print_with_log(etl.lookall(table2))
 
-# print(etl.lookall(etl.antijoin(table2, table, key="TxnId")))
+# print_with_log(etl.lookall(etl.antijoin(table2, table, key="TxnId")))
 
 # table = etl.fromcsv(r'C:\Users\john.delmundo\Downloads\CNEBOOKSHOP-010122-072522-0726153542.csv')
 
-# print(table)
+# print_with_log(table)
 
 # table = etl.fromcsv(r'C:\Users\john.delmundo\Downloads\CNEBOOKSHOP-010122-072522-0726153542.csv')
 
