@@ -15,3 +15,24 @@ The purpose of this project is to automate the daily extraction, transformation,
 - MySQL
 - SQL Server 2008 R2
 - VS Code
+
+## **Clone to your local**
+
+```bash
+> mkdir dragonpay_etl
+> cd dragonpay_etl
+> git clone https://github.com/jpdelmundo223/dpay-orders-etl.git
+```
+
+## **Enabling your virtual environment**
+
+```bash
+> cd dpay-orders-etl
+> venv\Scripts\activate
+```
+
+## **Install requirements**
+
+```python
+> pip install requirements.txt
+```
