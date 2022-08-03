@@ -8,7 +8,7 @@ I used [_petl_](https://petl.readthedocs.io/en/stable/), a general purpose Pytho
 
 ## **Purpose**
 
-The purpose of this project is to automate the daily extraction, transformation, and loading of data that is coming from the vendors website, which helps to reduce time, effort, reduring manual errors, and giving you more time to focus with other things or tasks.
+The purpose of this project is to automate the daily extraction, transformation, and loading of data that is coming from the vendors website, which helps to reduce time, effort, reducing manual errors, and giving you more time to focus with other things or tasks.
 
 ## **Technologies i used**
 
