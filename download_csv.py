@@ -12,22 +12,43 @@ import time
 import shutil
 import os
 import re
+import configparser
+
+config = configparser.ConfigParser()
+config.read('config.cfg')
 
 options = Options()
+
+# https://stackoverflow.com/questions/45631715/downloading-with-chrome-headless-and-selenium
+# chrome_prefs = {"download.default_directory": config.get('shutil', 'source_path')}
+# options.add_argument('--headless')
+# options.add_argument("--no-sandbox")
+# options.add_argument("--disable-dev-shm-usage")
+# options.experimental_options['prefs'] = chrome_prefs
+
+# https://www.youtube.com/watch?v=Rx66lkB7M74
+# This will allow to click the download button/files in headless mode
 options.add_argument('--headless')
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+
+params = {'behavior': 'allow', 'downloadPath': config.get('shutil', 'source_path')}
 
 config = configparser.ConfigParser()
 config.read('config.cfg')
 
 dt = datetime.now()
 
-two_days_from_now = dt - timedelta(days=2)
+two_days_from_now = dt - timedelta(days=3)
 from_date = datetime.strftime(two_days_from_now, "%m/%d/%Y")
 
 to_date = datetime.strftime(dt, "%m/%d/%Y")
 
 def download_csv(url: str, username: str, password: str) -> None:
-    driver = webdriver.Chrome(executable_path=r"C:\Users\john.delmundo\Desktop\dragonpay_orders\chromedriver\chromedriver.exe")
+    driver = webdriver.Chrome(executable_path=r".\chromedriver\chromedriver.exe", options=options)
+    # https://www.youtube.com/watch?v=Rx66lkB7M74
+    # This will allow to click the download button/files in headless mode
+    driver.execute_cdp_cmd('Page.setDownloadBehavior', params)
     wait = WebDriverWait(driver, 20)
     driver.get(url)
     
