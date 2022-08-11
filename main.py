@@ -6,19 +6,18 @@ import configparser
 import time
 import os
 
+# Read from config file
 config = configparser.ConfigParser()
-
 config.read('config.cfg')
 
+# 
 url = config.get('dragonpay', 'dpay_admin_url')
-
 user = config.get('dragonpay', 'dpay_admin_user', fallback='CNEBOOKSHOP')
 password = config.get('dragonpay', 'dpay_admin_password', fallback='h6LR5tFc8xeP5aM')
-
 source_path = config.get('shutil', 'source_path')
 destination_path = config.get('shutil', 'destination_path')
-
 csv_path = config.get('csv', 'csv_path')
+
 
 if __name__ == "__main__":
     # Create csv folder if not exists
