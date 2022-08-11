@@ -1,7 +1,7 @@
 from download_csv import download_csv
 from utils.delete_old_files import delete_old_files
 from utils.move_files import copy_files, move_files
-from etl import start_etl
+from etl import load_to_mssql, load_to_mysql
 import configparser
 import time
 import os
@@ -18,7 +18,7 @@ password = config.get('dragonpay', 'dpay_admin_password', fallback='h6LR5tFc8xeP
 source_path = config.get('shutil', 'source_path')
 destination_path = config.get('shutil', 'destination_path')
 
-csv_path = config.get('csv', 'file_path')
+csv_path = config.get('csv', 'csv_path')
 
 if __name__ == "__main__":
     # Create csv folder if not exists
@@ -28,6 +28,7 @@ if __name__ == "__main__":
     download_csv(url=url, username=user, password=password)
     time.sleep(2)
     copy_files(src=source_path, dst=destination_path)
-    delete_old_files(src=source_path, pattern='txnlist', days=3)
-    start_etl()
-    delete_old_files(src=csv_path, pattern='txnlist', days=3)
+    delete_old_files(src=source_path, pattern='txnlist', days=1)
+    load_to_mssql()
+    load_to_mysql()
+    delete_old_files(src=csv_path, pattern='txnlist', days=1)
